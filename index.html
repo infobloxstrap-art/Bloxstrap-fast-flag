@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Fast Flags Database - Complete Bloxstrap Configuration Guide</title>
+    <meta name="description" content="Ultimate collection of Roblox Fast Flags for Bloxstrap. Enhance your Roblox experience with 100+ optimized flags for performance, graphics, and gameplay.">
+    <meta name="keywords" content="Roblox, Fast Flags, Bloxstrap, Roblox optimization, game performance, graphics settings, Roblox mods">
+    <meta name="author" content="Roblox Fast Flags Database">
+    <meta property="og:title" content="Roblox Fast Flags Database - Complete Bloxstrap Configuration Guide">
+    <meta property="og:description" content="Ultimate collection of Roblox Fast Flags for Bloxstrap. Enhance your Roblox experience with 100+ optimized flags.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://roblox-fast-flags.vercel.app">
+    <meta property="og:image" content="https://roblox-fast-flags.vercel.app/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Roblox Fast Flags Database">
+    <meta name="twitter:description" content="Ultimate collection of Roblox Fast Flags for Bloxstrap. Enhance your Roblox experience.">
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #ec4899;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+            border-color: var(--primary-color);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--border-color);
+        }
+        
+        .flag-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .flag-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .flag-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .code-container {
+            background-color: #0f172a;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            margin: 15px 0;
+            border: 1px solid var(--border-color);
+        }
+        
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .code-title {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .copy-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .copy-btn.copied {
+            background-color: #10b981;
+        }
+        
+        pre {
+            margin: 0;
+            overflow-x: auto;
+        }
+        
+        code {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .category-pill {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .category-pill:hover {
+            transform: translateY(-2px);
+        }
+        
+        .rendering { background-color: #3b82f6; }
+        .graphical { background-color: #8b5cf6; }
+        .ui { background-color: #10b981; }
+        .textures { background-color: #ec4899; }
+        .physics { background-color: #f97316; }
+        .other { background-color: #6366f1; }
+        
+        .tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            margin-right: 5px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-bottom: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .tab.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .tab:hover:not(.active) {
+            background-color: var(--border-color);
+        }
+        
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border-radius: 10px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+        
+        .instruction-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        .link-card {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .link-card:hover {
+            transform: translateX(5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.2);
+        }
+        
+        .link-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            margin-right: 20px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #10b981;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .notification-icon {
+            margin-right: 10px;
+        }
+        
+        .accordion {
+            margin-bottom: 20px;
+        }
+        
+        .accordion-header {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background-color: var(--border-color);
+        }
+        
+        .accordion-header.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 1000px;
+        }
+        
+        .accordion-inner {
+            padding: 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--border-color);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+        }
+        
+        .faq-inner {
+            padding: 15px 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+            
+            .link-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .link-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-gradient py-6 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-2">Roblox Fast Flags Database</h1>
+                    <p class="text-xl text-gray-300">Complete Bloxstrap Configuration Guide</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#instructions" class="btn btn-primary">
+                        <i class="fas fa-book mr-2"></i>Get Started
+                    </a>
+                    <a href="#flags" class="btn btn-secondary">
+                        <i class="fas fa-flag mr-2"></i>Browse Flags
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="stats" class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">103+</div>
+                <div class="stat-label">Optimized Flags</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Texture Packs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Free to Use</div>
+            </div>
+        </section>
+
+        <section id="instructions" class="card p-8 mb-8">
+            <h2 class="text-3xl font-bold mb-6 gradient-text">How to Use Fast Flags with Bloxstrap</h2>
+            <p class="text-gray-300 mb-6">Follow these simple steps to enhance your Roblox experience with Fast Flags:</p>
+            
+            <div class="instruction-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 class="text-xl font-semibold mb-2">Launch Bloxstrap</h3>
+                    <p class="text-gray-400">Open the Bloxstrap application on your computer.</p>
+                </div>
+            </div>
+            
+            <div class="instruction-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 class="text-xl font-semibold mb-2">Access Fast Flags Menu</h3>
+                    <p class="text-gray-400">Navigate to <strong>Fast Flags</strong> > <strong>Fast Flags Editor</strong> > <strong>Import JSON</strong>.</p>
+                </div>
+            </div>
+            
+            <div class="instruction-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 class="text-xl font-semibold mb-2">Copy and Paste</h3>
+                    <p class="text-gray-400">Copy the JSON code from any flag below and paste it into the import field.</p>
+                </div>
+            </div>
+            
+            <div class="instruction-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3 class="text-xl font-semibold mb-2">Apply and Save</h3>
+                    <p class="text-gray-400">Click save and restart Roblox to apply the changes.</p>
+                </div>
+            </div>
+            
+            <div class="bg-blue-900 bg-opacity-30 border-l-4 border-blue-500 p-4 mt-6 rounded">
+                <p class="text-blue-300"><i class="fas fa-info-circle mr-2"></i><strong>Note:</strong> Bloxstrap Presets have been removed. Please use Bloxstrap directly for the best experience.</p>
+            </div>
+        </section>
+
+        <section id="search" class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search for flags by name, description, or category...">
+        </section>
+
+        <section id="categories" class="mb-8">
+            <div class="flex flex-wrap justify-center mb-6">
+                <div class="tab active" data-category="all">All Flags</div>
+                <div class="tab" data-category="rendering">Rendering</div>
+                <div class="tab" data-category="graphical">Graphical</div>
+                <div class="tab" data-category="ui">User Interface</div>
+                <div class="tab" data-category="textures">Textures</div>
+                <div class="tab" data-category="physics">Physics</div>
+                <div class="tab" data-category="other">Other</div>
+            </div>
+        </section>
+
+        <section id="flags" class="mb-12">
+            <div id="flags-container">
+                <!-- Flags will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section id="faq" class="card p-8 mb-8">
+            <h2 class="text-3xl font-bold mb-6 gradient-text">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What are Fast Flags?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-inner">
+                        <p>Fast Flags are configuration settings that allow you to modify various aspects of Roblox's behavior and appearance. They can improve performance, change graphics settings, and enable experimental features.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is using Fast Flags safe?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-inner">
+                        <p>Yes, Fast Flags are generally safe to use as they only modify client-side settings. However, some flags may cause instability or unexpected behavior in certain games. Always backup your settings before making changes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I get banned for using Fast Flags?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-inner">
+                        <p>No, using Fast Flags with Bloxstrap is not against Roblox's Terms of Service as they only modify client-side settings and do not provide unfair advantages in gameplay.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I reset my Fast Flags?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-inner">
+                        <p>To reset your Fast Flags, open Bloxstrap, go to Fast Flags > Fast Flags Editor, and click "Reset to Defaults". This will restore all settings to their original values.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section id="resources" class="card p-8">
+    <h2 class="text-3xl font-bold mb-6 gradient-text">Additional Resources</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <a href="https://bloxstraps.net/bloxstrap-fast-flags/" target="_blank" class="link-card">
+            <div class="link-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-2">Bloxstrap Fast Flags</h3>
+                <p class="text-gray-400">Complete guide to performance, graphics, and optimization flags</p>
+            </div>
+        </a>
+
+        <a href="https://www.roblox.com/" target="_blank" class="link-card">
+            <div class="link-icon">
+                <i class="fas fa-gamepad"></i>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-2">Official Roblox Website</h3>
+                <p class="text-gray-400">Visit the official Roblox platform and resources</p>
+            </div>
+        </a>
+
+    </div>
+</section>
+    </main>
+
+    <footer class="hero-gradient py-8 px-4 mt-12">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-300 mb-2">© 2023 Roblox Fast Flags Database</p>
+            <p class="text-gray-400 text-sm">Not affiliated with Roblox Corporation. All flags provided for educational purposes.</p>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification">
+        <i class="fas fa-check-circle notification-icon"></i>
+        <span id="notificationText">Copied to clipboard!</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script>
+        // Flag data with improved descriptions
+        const flags = [
+            // Rendering API
+            {
+                name: "Metal Rendering",
+                description: "Optimized for macOS devices",
+                category: "rendering",
+                json: '{ "FFlagDebugGraphicsPreferMetal": "True" }',
+                note: "Use this flag if you're on macOS for better performance and compatibility with Apple's Metal graphics API."
+            },
+            {
+                name: "Vulkan Rendering",
+                description: "Modern graphics API for better performance",
+                category: "rendering",
+                json: '{ "FFlagDebugGraphicsDisableDirect3D11": "True", "FFlagDebugGraphicsPreferVulkan": "True" }',
+                note: "Vulkan can provide better performance on supported systems, especially for modern GPUs."
+            },
+            {
+                name: "OpenGL Rendering",
+                description: "Alternative graphics API",
+                category: "rendering",
+                json: '{ "FFlagDebugGraphicsDisableDirect3D11": "True", "FFlagDebugGraphicsPreferOpenGL": "True" }',
+                note: "Use OpenGL if you're experiencing issues with DirectX or want to try an alternative rendering path."
+            },
+            {
+                name: "DirectX 10",
+                description: "Legacy DirectX support",
+                category: "rendering",
+                json: '{ "FFlagDebugGraphicsPreferD3D11FL10": "True" }',
+                note: "For older systems that don't support DirectX 11 features."
+            },
+            {
+                name: "DirectX 11",
+                description: "Standard DirectX rendering",
+                category: "rendering",
+                json: '{ "FFlagDebugGraphicsPreferD3D11": "True" }',
+                note: "The default and most compatible rendering option for Windows systems."
+            },
+            // Graphical Settings
+            {
+                name: "Smoother Terrain",
+                description: "Improves terrain rendering quality",
+                category: "graphical",
+                json: '{ "FFlagDebugRenderingSetDeterministic": "True" }',
+                note: "Makes terrain appear smoother and more consistent across different systems."
+            },
+            {
+                name: "Graphics Quality Control",
+                description: "Set your preferred graphics level",
+                category: "graphical",
+                json: '{ "FIntRomarkStartWithGraphicQualityLevel": "1" }',
+                note: "Sets the graphics quality level (1-21). Lower values for better performance, higher for better visuals."
+            },
+            {
+                name: "Terrain Texture Quality",
+                description: "Adjust terrain texture resolution",
+                category: "graphical",
+                json: '{ "FIntTerrainArraySliceSize": "4" }',
+                note: "Controls terrain texture quality. Use 4 for low quality, 16-64 for higher quality."
+            },
+            {
+                name: "Disable All Shadows",
+                description: "Remove shadows for better performance",
+                category: "graphical",
+                json: '{ "FIntRenderShadowIntensity": "0" }',
+                note: "Completely disables shadow rendering, significantly improving performance on low-end systems."
+            },
+            {
+                name: "Unlimited FPS",
+                description: "Remove FPS cap for smoother gameplay",
+                category: "graphical",
+                json: '{ "DFIntTaskSchedulerTargetFps": "9999" }',
+                note: "Sets the FPS limit to a very high value, effectively uncapping your framerate."
+            },
+            {
+                name: "Network Debug Visualizer",
+                description: "Visualize network performance",
+                category: "graphical",
+                json: '{ "DFFlagDebugEnableInterpolationVisualizer": "True" }',
+                note: "Enables a network debug tracker (press CTRL+F8 to toggle) to monitor network performance."
+            },
+            {
+                name: "Humanoid Outlines",
+                description: "See character boundaries",
+                category: "graphical",
+                json: '{ "DFFlagDebugDrawBroadPhaseAABBs": "True" }',
+                note: "Draws outlines around all characters and parts, useful for debugging or visual effects."
+            },
+            {
+                name: "X-Ray Vision",
+                description: "See through walls and objects",
+                category: "graphical",
+                json: '{ "FIntCameraFarZPlane": "1" }',
+                note: "Modifies the camera's far plane to see through objects. Use with caution as it may cause visual glitches."
+            },
+            {
+                name: "Preserve DPI Scaling",
+                description: "Maintain quality at different display settings",
+                category: "graphical",
+                json: '{ "DFFlagDisableDPIScale": "True" }',
+                note: "Prevents quality loss when changing display scaling settings."
+            },
+            {
+                name: "Performance Mode",
+                description: "Low graphics with maximum visibility",
+                category: "graphical",
+                json: '{ "DFIntDebugFRMQualityLevelOverride": "1" }',
+                note: "Sets graphics to low quality while maintaining maximum render distance. Values 1-6 are low, 7+ are high."
+            },
+            {
+                name: "Reduced Render Distance",
+                description: "Improve performance by limiting visibility",
+                category: "graphical",
+                json: '{ "DFIntDebugRestrictGCDistance": "1" }',
+                note: "Significantly reduces render distance for better performance on slower systems."
+            },
+            {
+                name: "Disable Wind Effects",
+                description: "Remove wind simulation for better performance",
+                category: "graphical",
+                json: '{ "FFlagGlobalWindRendering": "False", "FFlagGlobalWindActivated": "False" }',
+                note: "Disables wind effects on foliage and particles, improving performance."
+            },
+            {
+                name: "Optimize Light Updates",
+                description: "Reduce lighting calculation overhead",
+                category: "graphical",
+                json: '{ "FIntRenderLocalLightUpdatesMax": "8", "FIntRenderLocalLightUpdatesMin": "6" }',
+                note: "Limits how frequently lights update, improving performance in complex scenes."
+            },
+            {
+                name: "Instant Light Transitions",
+                description: "Remove light fade animations",
+                category: "graphical",
+                json: '{ "FIntRenderLocalLightFadeInMs": "0" }',
+                note: "Eliminates the fade-in/fade-out animations for lights, making updates instant."
+            },
+            {
+                name: "Reflective Avatars",
+                description: "Make characters appear shiny and metallic",
+                category: "graphical",
+                json: '{ "DFIntRenderClampRoughnessMax": "-640000000", "DFIntDebugFRMQualityLevelOverride": "21" }',
+                note: "Creates a highly reflective effect on avatars. May cause visual issues in some games."
+            },
+            {
+                name: "Disable Post-Processing",
+                description: "Remove visual effects for better performance",
+                category: "graphical",
+                json: '{ "FFlagDisablePostFx": "True" }',
+                note: "Disables all post-processing effects like bloom, motion blur, and color grading."
+            },
+            {
+                name: "Disable Baked Shadows",
+                description: "Remove pre-computed shadows",
+                category: "graphical",
+                json: '{ "DFFlagDebugPauseVoxelizer": "True" }',
+                note: "Pauses the voxelizer that creates baked shadows, improving performance."
+            },
+            {
+                name: "Monochrome Sky",
+                description: "Simple gray sky for better performance",
+                category: "graphical",
+                json: '{ "FFlagDebugSkyGray": "True" }',
+                note: "Replaces the sky with a simple gray color, reducing rendering overhead."
+            },
+            {
+                name: "Disable Player Shadows",
+                description: "Remove shadows cast by players",
+                category: "graphical",
+                json: '{ "FIntRenderShadowIntensity": "0" }',
+                note: "Specifically disables shadows cast by player characters while keeping other shadows."
+            },
+            {
+                name: "Force Mesh LOD",
+                description: "Reduce mesh detail for better performance",
+                category: "graphical",
+                json: '{ "DFIntCSGLevelOfDetailSwitchingDistance": "0", "FFlagGlobaDFIntCSGLevelOfDetailSwitchingDistanceL12lWindActivated": "0", "DFIntCSGLevelOfDetailSwitchingDistanceL23": "0", "DFIntCSGLevelOfDetailSwitchingDistanceL34": "0" }',
+                note: "Forces lower detail models on meshes, significantly improving performance."
+            },
+            {
+                name: "Advanced Lighting",
+                description: "Improved light attenuation model",
+                category: "graphical",
+                json: '{ "FFlagNewLightAttenuation": "True" }',
+                note: "Enables a more realistic light attenuation model for better visual quality."
+            },
+            {
+                name: "GPU Light Culling",
+                description: "Optimize lighting calculations",
+                category: "graphical",
+                json: '{ "FFlagFastGPULightCulling3": "True" }',
+                note: "Uses GPU acceleration for light culling, improving performance in lit scenes."
+            },
+            {
+                name: "Frame Buffer Optimization",
+                description: "Balance performance and input lag",
+                category: "graphical",
+                json: '{ "DFIntMaxFrameBufferSize": "4" }',
+                note: "Optimizes frame buffer size. Value 4 provides good balance of performance and responsiveness."
+            },
+            {
+                name: "Maximum Texture Quality",
+                description: "Enable high-resolution textures",
+                category: "graphical",
+                json: '{ "DFFlagTextureQualityOverrideEnabled": "True", "DFIntTextureQualityOverride": "3" }',
+                note: "Forces maximum texture quality. Use values 1-3 to adjust quality level."
+            },
+            {
+                name: "Minimum Texture Quality",
+                description: "Reduce texture quality for performance",
+                category: "graphical",
+                json: '{ "DFIntPerformanceControlTextureQualityBestUtility": "-1" }',
+                note: "Forces minimum texture quality for maximum performance on low-end systems."
+            },
+            {
+                name: "Remove Grass",
+                description: "Eliminate grass rendering",
+                category: "graphical",
+                json: '{ "FIntFRMMinGrassDistance": "0", "FIntFRMMaxGrassDistance": "0", "FIntRenderGrassDetailStrands": "0", "FIntRenderGrassHeightScaler": "0" }',
+                note: "Completely removes grass from rendering, significantly improving performance."
+            },
+            {
+                name: "Force Anti-Aliasing",
+                description: "Smooth jagged edges",
+                category: "graphical",
+                json: '{ "FIntDebugForceMSAASamples": "4" }',
+                note: "Forces MSAA anti-aliasing. Use values 0 (off), 2, 4, or 8 for different quality levels."
+            },
+            {
+                name: "Shadow Quality Adjustment",
+                description: "Fine-tune shadow appearance",
+                category: "graphical",
+                json: '{ "FIntRenderShadowmapBias": "75" }',
+                note: "Adjusts shadow map bias to fix shadow artifacts or improve shadow quality."
+            },
+            // UI
+            {
+                name: "Transparent Menu Fix",
+                description: "Remove transparency from modern menu",
+                category: "ui",
+                json: '{ "FStringInGameMenuModernizationStickyBarForcedUserIds": "UserID" }',
+                note: "Removes transparency from the V4 menu. Replace 'UserID' with your Roblox user ID."
+            },
+            {
+                name: "Classic Report Menu",
+                description: "Restore the old report interface",
+                category: "ui",
+                json: '{ "FStringReportAbuseMenuRoactForcedUserIds": "UserID_HERE", "FFlagEnableReportAbuseMenuRoactABTest2": "False", "FFlagEnableReportAbuseMenuRoact2": "False", "FFlagEnableReportAbuseMenuLayerOnV3": "False" }',
+                note: "Reverts to the classic report menu design. Replace 'UserID_HERE' with your Roblox user ID."
+            },
+            {
+                name: "Debug UI Scale",
+                description: "Adjust microprofiler interface size",
+                category: "ui",
+                json: '{ "DFIntMicroProfilerDpiScaleOverride": "100" }',
+                note: "Sets the scale of the microprofiler debug interface."
+            },
+            {
+                name: "Legacy Menu",
+                description: "Restore the original in-game menu",
+                category: "ui",
+                json: '{ "FIntNewInGameMenuPercentRollout3": "10000" }',
+                note: "Reverts to the V1 in-game menu design for those who prefer the classic interface."
+            },
+            {
+                name: "Hide All GUI",
+                description: "Remove all interface elements",
+                category: "ui",
+                json: '{ "FFlagDebugAdornsDisabled": "True" }',
+                note: "Hides all GUI elements for a cleaner view or screenshot purposes."
+            },
+            {
+                name: "Disable UI Rendering",
+                description: "Completely turn off user interface",
+                category: "ui",
+                json: '{ "FFlagDebugDontRenderUI": "True" }',
+                note: "Completely disables UI rendering for maximum performance or cinematic recording."
+            },
+            {
+                name: "Audio Debug Interface",
+                description: "Enable audio controller debug UI",
+                category: "ui",
+                json: '{ "FFlagTrackerLodControllerDebugUI": "True" }',
+                note: "Shows a debug interface for audio settings and performance monitoring."
+            },
+            {
+                name: "Disable Command Autocomplete",
+                description: "Turn off chat command suggestions",
+                category: "ui",
+                json: '{ "FFlagEnableCommandAutocomplete": "False" }',
+                note: "Disables the autocomplete feature for chat commands."
+            },
+            {
+                name: "Chrome-Style Top Bar",
+                description: "Enable modern top bar design",
+                category: "ui",
+                json: '{ "FFlagEnableInGameMenuChrome": "True" }',
+                note: "Enables the Chrome-style top bar for a more modern interface."
+            },
+            {
+                name: "Enhanced Chrome UI",
+                description: "Full Chrome interface experience",
+                category: "ui",
+                json: '{ "FFlagChromeBetaFeature": "True", "FFlagEnableChromePinnedChat": "True", "FFlagEnableInGameMenuChrome": "True", "FFlagEnableInGameMenuChromeABTest": "True", "FFlagEnableInGameMenuChromeSignalAPI": "True", "FFlagPlayerListChromePushdown": "True", "FFlagEnableChromeEscapeFix": "True", "FFlagEnableChromeMicShimmer": "True", "FFlagPlayerListChromePushdown": "True" }',
+                note: "Enables all Chrome UI features for the most modern interface experience."
+            },
+            {
+                name: "Disable Chrome UI",
+                description: "Remove Chrome-style interface",
+                category: "ui",
+                json: '{ "FFlagChromeBetaFeature": "False", "FFlagEnableChromePinnedChat": "False", "FFlagEnableInGameMenuChrome": "False", "FFlagEnableInGameMenuChromeABTest": "False", "FFlagEnableInGameMenuChromeSignalAPI": "False", "FFlagPlayerListChromePushdown": "False" }',
+                note: "Disables all Chrome UI features if you prefer the classic interface."
+            },
+            {
+                name: "Disable Bubble Chat",
+                description: "Remove speech bubbles above characters",
+                category: "ui",
+                json: '{ "FFlagEnableBubbleChatFromChatService": "False" }',
+                note: "Disables the bubble chat feature for a cleaner visual experience."
+            },
+            {
+                name: "Disable Voice Self-View",
+                description: "Remove voice chat self-preview",
+                category: "ui",
+                json: '{ "FFlagCoreGuiTypeSelfViewPresent": "False" }',
+                note: "Disables the self-view window that appears during voice chat."
+            },
+            {
+                name: "Remove Voice Beta Badge",
+                description: "Hide voice chat beta indicator",
+                category: "ui",
+                json: '{ "FFlagVoiceBetaBadge": "False", "FFlagTopBarUseNewBadge": "False", "FFlagEnableBetaBadgeLearnMore": "False", "FFlagBetaBadgeLearnMoreLinkFormview": "False", "FFlagControlBetaBadgeWithGuac": "False", "FStringVoiceBetaBadgeLearnMoreLink": "null" }',
+                note: "Removes the beta badge from voice chat for a cleaner interface."
+            },
+            {
+                name: "Pin Chat Window",
+                description: "Keep chat always visible",
+                category: "ui",
+                json: '{ "FFlagEnableChromePinnedChat": "True" }',
+                note: "Pins the chat window so it stays visible even when typing."
+            },
+            {
+                name: "Hide Group GUIs",
+                description: "Remove interface elements from specific groups",
+                category: "ui",
+                json: '{ "DFIntCanHideGuiGroupId": "ID_HERE" }',
+                note: "Hides GUIs from specific groups. Replace 'ID_HERE' with a group ID you're in."
+            },
+            {
+                name: "Disable Fullscreen Bar",
+                description: "Hide the fullscreen title bar",
+                category: "ui",
+                json: '{ "FIntFullscreenTitleBarTriggerDelayMillis": "3600000" }',
+                note: "Prevents the fullscreen title bar from appearing when you move your mouse to the top."
+            },
+            {
+                name: "Custom Font Size",
+                description: "Adjust interface text size",
+                category: "ui",
+                json: '{ "FIntFontSizePadding": "1" }',
+                note: "Increases the font size of UI elements for better readability."
+            },
+            // Textures
+            {
+                name: "Minimalist Textures",
+                description: "Remove most textures for clean look",
+                category: "textures",
+                json: '{\n    "FStringPartTexturePackTable2022": "{\\"glass\\":{\\"ids\\":[\\"rbxassetid://9873284556\\",\\"rbxassetid://9438453972\\"],\\"color\\":[254,254,254,7]}}",\n    "FStringPartTexturePackTablePre2022": "{\\"glass\\":{\\"ids\\":[\\"rbxassetid://7547304948\\",\\"rbxassetid://7546645118\\"],\\"color\\":[254,254,254,7]}}",\n    "FStringTerrainMaterialTable2022": "",\n    "FStringTerrainMaterialTablePre2022": ""\n}',
+                note: "Removes most textures from the game for a minimalist aesthetic and better performance."
+            },
+            // Physics
+            {
+                name: "Object Attraction",
+                description: "Make unanchored parts stick to you",
+                category: "physics",
+                json: '{ "DFIntSolidFloorPercentForceApplication": "-1000", "DFIntNonSolidFloorPercentForceApplication": "-5000" }',
+                note: "Causes unanchored parts to be attracted to your character. Use negative values to pull objects up."
+            },
+            {
+                name: "Realistic Physics",
+                description: "Enable advanced physics simulation",
+                category: "physics",
+                json: '{ "DFFlagSimHumanoidPhysics": "True" }',
+                note: "Enables more realistic physics simulation, but may break certain movement glitches."
+            },
+            {
+                name: "Raycast Distance Control",
+                description: "Adjust maximum raycast distance",
+                category: "physics",
+                json: '{ "DFIntRaycastMaxDistance": "3" }',
+                note: "Controls how far raycasts can travel. Value of 3 enables a noclip camera effect."
+            },
+            {
+                name: "Enhanced Jumping",
+                description: "Increase jump height and ability",
+                category: "physics",
+                json: '{ "DFIntNewRunningBaseGravityReductionFactorHundredth": "1500" }',
+                note: "Modifies gravity reduction during jumps, potentially enabling super jumping."
+            },
+            {
+                name: "Movement Damping",
+                description: "Control character movement physics",
+                category: "physics",
+                json: '{ "FIntPGSAngularDampingPermilPersecond": "-10000" }',
+                note: "Adjusts angular damping to modify movement behavior. Extreme values may break movement."
+            },
+            {
+                name: "Neutral Movement",
+                description: "Reset movement physics",
+                category: "physics",
+                json: '{ "FIntPGSAngularDampingPermilPersecond": "0" }',
+                note: "Sets angular damping to neutral, creating unique movement characteristics."
+            },
+            {
+                name: "Advanced Collision",
+                description: "Improve collision detection",
+                category: "physics",
+                json: '{ "FFlagHumanoidOnlySetCollisionsOnStateChangeDefaultIsEnabled": "False", "FFlagHumanoidParallelFasterSetCollision": "True" }',
+                note: "Enables faster collision updates and allows falling through certain block designs."
+            },
+            {
+                name: "Network Desync",
+                description: "Create intentional network lag",
+                category: "physics",
+                json: '{ "DFIntDataSenderRate": "-1" }',
+                note: "Causes network desynchronization, preventing games from loading properly."
+            },
+            {
+                name: "Simulated Lag",
+                description: "Create artificial latency",
+                category: "physics",
+                json: '{ "DFIntS2PhysicsSenderRate": "1" }',
+                note: "Simulates network lag by reducing physics update frequency."
+            },
+            {
+                name: "Extreme Desync",
+                description: "Maximum network manipulation",
+                category: "physics",
+                json: '{ "DFIntS2PhysicsSenderRate": "1", "FIntPGSAngularDampingPermilPersecond": "0" }',
+                note: "Combines network lag with movement modification for extreme desynchronization."
+            },
+            {
+                name: "Phase Through Walls",
+                description: "Enable wall clipping",
+                category: "physics",
+                json: '{ "DFFlagAssemblyExtentsExpansionStudHundredth": "-50" }',
+                note: "Allows you to phase through walls. Adjust the value to control the effect."
+            },
+            {
+                name: "No Collision Mode",
+                description: "Disable collision detection",
+                category: "physics",
+                json: '{ "FIntPGSPenetrationMarginMax": "2147483647", "FIntPGSPenetrationMarginMin": "2147483647" }',
+                note: "Effectively disables collision detection, allowing you to pass through objects."
+            },
+            {
+                name: "Combined Noclip",
+                description: "Ultimate wall clipping",
+                category: "physics",
+                json: '{ "FIntPGSPenetrationMarginMax": "2147483647", "FIntPGSPenetrationMarginMin": "2147483647", "DFFlagAssemblyExtentsExpansionStudHundredth": "-50" }',
+                note: "Combines two noclip methods for the most reliable wall clipping."
+            },
+            {
+                name: "Object Telekinesis",
+                description: "Control unanchored objects",
+                category: "physics",
+                json: '{ "FIntPGSPenetrationMarginMax": "-100000000", "FIntPGSPenetrationMarginMin": "-100000000" }',
+                note: "Allows you to manipulate unanchored parts from a distance."
+            },
+            {
+                name: "Speed Boost",
+                description: "Increase movement speed",
+                category: "physics",
+                json: '{ "DFIntDebugSimPhysicsSteppingMethodOverride": "10000000" }',
+                note: "Provides a slight speed boost in specific games like Phantom Forces."
+            },
+            {
+                name: "Hover Mode",
+                description: "Float above the ground",
+                category: "physics",
+                json: '{ "DFIntMaxAltitudePDStickHipHeightPercent": "-200" }',
+                note: "Allows you to hover above the ground. Value of 0 enables perfect hovering."
+            },
+            {
+                name: "Wall Gliding",
+                description: "Slide along walls",
+                category: "physics",
+                json: '{ "DFFlagUnstickForceAttackInTenths": "-4" }',
+                note: "Enables wall gliding, allowing you to slide along vertical surfaces."
+            },
+            // Other
+            {
+                name: "Ad Blocker",
+                description: "Remove all in-game advertisements",
+                category: "other",
+                json: '{ "FFlagAdServiceEnabled": "False" }',
+                note: "Disables the ad service, removing all advertisements from the game."
+            },
+            {
+                name: "Privacy Mode",
+                description: "Reduce data collection",
+                category: "other",
+                json: '{ "FFlagDebugDisableTelemetryEphemeralCounter": "True", "FFlagDebugDisableTelemetryEphemeralStat": "True", "FFlagDebugDisableTelemetryEventIngest": "True", "FFlagDebugDisableTelemetryPoint": "True", "FFlagDebugDisableTelemetryV2Counter": "True", "FFlagDebugDisableTelemetryV2Event": "True", "FFlagDebugDisableTelemetryV2Stat": "True" }',
+                note: "Partially disables telemetry data collection for increased privacy."
+            },
+            {
+                name: "Scroll Speed Control",
+                description: "Adjust mouse scroll sensitivity",
+                category: "other",
+                json: '{ "FIntScrollWheelDeltaAmount": "140" }',
+                note: "Changes how fast the camera zooms when using the mouse wheel."
+            },
+            {
+                name: "In-Game Browser",
+                description: "Browse the web within Roblox",
+                category: "other",
+                json: '{ "FFlagTopBarUseNewBadge": "True", "FStringTopBarBadgeLearnMoreLink": "https://google.com/", "FStringVoiceBetaBadgeLearnMoreLink": "https://google.com/" }',
+                note: "Enables a web browser accessible through the top bar badges."
+            },
+            {
+                name: "Distorted Audio",
+                description: "Create unique sound effects",
+                category: "other",
+                json: '{ "FFlagSoundsUsePhysicalVelocity": "True" }',
+                note: "Makes sounds respond to physical velocity, creating interesting distortion effects."
+            },
+            {
+                name: "Flag Inspector",
+                description: "Check the status of specific flags",
+                category: "other",
+                json: '{ "FStringDebugShowFlagState": "FLAG_HERE" }',
+                note: "Shows the current state of a specific flag. Replace 'FLAG_HERE' with the flag name."
+            },
+            {
+                name: "Network Optimization",
+                description: "Adjust MTU for better connection",
+                category: "other",
+                json: '{ "DFIntConnectionMTUSize": "MTU_HERE" }',
+                note: "Sets the MTU size, which may improve network performance. Replace 'MTU_HERE' with your desired value."
+            },
+            {
+                name: "Silent Disconnect",
+                description: "Hide disconnect messages",
+                category: "other",
+                json: '{ "DFFlagDebugDisableTimeoutDisconnect": "True" }',
+                note: "Prevents disconnect messages from appearing, though you'll still be disconnected."
+            },
+            {
+                name: "Fast Game Loading",
+                description: "Reduce game startup time",
+                category: "other",
+                json: '{ "FFlagEnableQuickGameLaunch": "True" }',
+                note: "Enables faster game launching, though it may be unstable in some cases."
+            },
+            {
+                name: "Voice Range Control",
+                description: "Adjust voice chat distance",
+                category: "other",
+                json: '{ "DFIntVoiceChatRollOffMinDistance": "7", "DFIntVoiceChatRollOffMaxDistance": "80" }',
+                note: "Controls how far voice chat can be heard. Default is 7-80 studs."
+            },
+            {
+                name: "Disable Purchases",
+                description: "Block in-game transactions",
+                category: "other",
+                json: '{ "DFFlagOrder66": "True" }',
+                note: "Disables all in-game purchase options."
+            },
+            {
+                name: "Disable Chat",
+                description: "Turn off text communication",
+                category: "other",
+                json: '{ "FFlagDebugForceChatDisabled": "True" }',
+                note: "Completely disables the chat feature."
+            },
+            {
+                name: "Audio Channel Limit",
+                description: "Reduce simultaneous sounds",
+                category: "other",
+                json: '{ "DFIntMaxLoadableAudioChannelCount": "1" }',
+                note: "Limits the number of audio channels, reducing audio processing overhead."
+            },
+            {
+                name: "Debug Humanoid",
+                description: "Visualize character interactions",
+                category: "other",
+                json: '{ "FFlagDebugHumanoidRendering": "True" }',
+                note: "Shows debug information about character interactions and adds visual indicators."
+            },
+            {
+                name: "Custom Disconnect Message",
+                description: "Personalize disconnect text",
+                category: "other",
+                json: '{ "FFlagReconnectDisabled": "True", "FStringReconnectDisabledReason": "You\'re stupid and I hate you" }',
+                note: "Sets a custom message that appears when disconnected."
+            },
+            {
+                name: "FPS Counter",
+                description: "Display current framerate",
+                category: "other",
+                json: '{ "FFlagDebugDisplayFPS": "True" }',
+                note: "Shows a real-time FPS counter in the corner of the screen."
+            },
+            {
+                name: "Verified Badge",
+                description: "Get verified status for specific user",
+                category: "other",
+                json: '{ "FStringWhitelistVerifiedUserId": "UserID_HERE" }',
+                note: "Gives a verified badge to a specific user. Replace 'UserID_HERE' with the user ID."
+            },
+            {
+                name: "Universal Verification",
+                description: "Give everyone verified badges",
+                category: "other",
+                json: '{ "FFlagOverridePlayerVerifiedBadge": "True" }',
+                note: "Displays a verified badge on all players."
+            },
+            {
+                name: "Debug Colors",
+                description: "Apply unique colors to objects",
+                category: "other",
+                json: '{ "FFlagDebugDisplayUnthemedInstances": "True" }',
+                note: "Applies colorful debug overlays to unthemed objects."
+            },
+            {
+                name: "Light Grid Visualization",
+                description: "See how lighting is calculated",
+                category: "other",
+                json: '{ "FFlagDebugLightGridShowChunks": "True" }',
+                note: "Displays the light grid chunks used for lighting calculations."
+            },
+            {
+                name: "Remove Blur Effects",
+                description: "Disable blur transitions",
+                category: "other",
+                json: '{ "FIntRobloxGuiBlurIntensity": "0" }',
+                note: "Removes blur effects that appear during loading or disconnection."
+            },
+            {
+                name: "Disable Dynamic Heads",
+                description: "Turn off advanced facial animations",
+                category: "other",
+                json: '{ "DFFlagEnableDynamicHeadByDefault": "False" }',
+                note: "Disables dynamic head animations for better performance."
+            },
+            {
+                name: "Gray Avatar Mode",
+                description: "Simplify character rendering",
+                category: "other",
+                json: '{ "FFlagFailsafeHumanoid_3": "True" }',
+                note: "Renders all avatars in gray for a uniform look and better performance."
+            },
+            {
+                name: "Auto Mic Unmute",
+                description: "Start with microphone enabled",
+                category: "other",
+                json: '{ "FFlagDebugDefaultChannelStartMuted": "False" }',
+                note: "Automatically unmutes your microphone when joining voice chat."
+            },
+            {
+                name: "Text Input Overlay",
+                description: "Show what you're typing",
+                category: "other",
+                json: '{ "FFlagDebugTextBoxServiceShowOverlay": "True" }',
+                note: "Displays an overlay showing your current text input."
+            },
+            {
+                name: "Hide Language Settings",
+                description: "Remove experience language option",
+                category: "other",
+                json: '{ "FIntV1MenuLanguageSelectionFeaturePerMillageRollout": "0" }',
+                note: "Removes the experience language setting from the menu."
+            },
+            {
+                name: "Disable Translation",
+                description: "Turn off chat translation",
+                category: "other",
+                json: '{ "FFlagChatTranslationSettingEnabled3 ": "False" }',
+                note: "Disables the chat translation feature."
+            },
+            {
+                name: "Infinite Zoom",
+                description: "Remove camera distance limit",
+                category: "other",
+                json: '{ "FIntCameraMaxZoomDistance": "9999" }',
+                note: "Allows you to zoom out much further than normal."
+            },
+            {
+                name: "Animation Limit",
+                description: "Reduce animation processing",
+                category: "other",
+                json: '{ "DFIntMaxActiveAnimationTracks": "0" }',
+                note: "Limits the number of simultaneous animations for better performance."
+            },
+            {
+                name: "Disable Remote Events",
+                description: "Block server communication",
+                category: "other",
+                json: '{ "DFIntRemoteEventSingleInvocationSizeLimit": "1" }',
+                note: "Prevents remote events from functioning properly."
+            },
+            {
+                name: "Invisibility Mode",
+                description: "Become invisible on your screen",
+                category: "other",
+                json: '{ "FIntParallelDynamicPartsFastClusterBatchSize": "1" }',
+                note: "Makes your character invisible only to you."
+            }
+        ];
+
+        // DOM elements
+        const flagsContainer = document.getElementById('flags-container');
+        const searchInput = document.getElementById('searchInput');
+        const tabs = document.querySelectorAll('.tab');
+        const notification = document.getElementById('notification');
+        const notificationText = document.getElementById('notificationText');
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFlags(flags);
+            setupEventListeners();
+            setupFAQ();
+        });
+
+        // Render flags
+        function renderFlags(flagsToRender) {
+            flagsContainer.innerHTML = '';
+            
+            if (flagsToRender.length === 0) {
+                flagsContainer.innerHTML = '<div class="col-span-full text-center py-12 text-gray-400"><i class="fas fa-search text-4xl mb-4"></i><p>No flags found matching your search criteria.</p></div>';
+                return;
+            }
+            
+            flagsToRender.forEach(flag => {
+                const flagCard = createFlagCard(flag);
+                flagsContainer.appendChild(flagCard);
+            });
+        }
+
+        // Create flag card
+        function createFlagCard(flag) {
+            const card = document.createElement('div');
+            card.className = 'flag-card';
+            card.dataset.category = flag.category;
+            
+            const header = document.createElement('div');
+            header.className = 'flex justify-between items-start mb-4';
+            
+            const titleSection = document.createElement('div');
+            titleSection.className = 'flex-1';
+            
+            const categoryBadge = document.createElement('span');
+            categoryBadge.className = `category-pill ${flag.category}`;
+            categoryBadge.textContent = flag.category.charAt(0).toUpperCase() + flag.category.slice(1);
+            
+            const title = document.createElement('h3');
+            title.className = 'text-2xl font-bold text-white mb-2';
+            title.textContent = flag.name;
+            
+            const description = document.createElement('p');
+            description.className = 'text-gray-300 mb-3';
+            description.textContent = flag.description;
+            
+            titleSection.appendChild(categoryBadge);
+            titleSection.appendChild(title);
+            titleSection.appendChild(description);
+            
+            const icon = document.createElement('div');
+            icon.className = 'text-2xl text-gray-500';
+            icon.innerHTML = '<i class="fas fa-code"></i>';
+            
+            header.appendChild(titleSection);
+            header.appendChild(icon);
+            
+            const codeContainer = document.createElement('div');
+            codeContainer.className = 'code-container';
+            
+            const codeHeader = document.createElement('div');
+            codeHeader.className = 'code-header';
+            
+            const codeTitle = document.createElement('div');
+            codeTitle.className = 'code-title';
+            codeTitle.textContent = 'JSON Configuration';
+            
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'copy-btn';
+            copyBtn.innerHTML = '<i class="fas fa-copy mr-2"></i>Copy';
+            copyBtn.addEventListener('click', () => {
+                copyToClipboard(flag.json, copyBtn);
+            });
+            
+            codeHeader.appendChild(codeTitle);
+            codeHeader.appendChild(copyBtn);
+            
+            const code = document.createElement('pre');
+            code.className = 'language-json';
+            code.textContent = formatJson(flag.json);
+            
+            codeContainer.appendChild(codeHeader);
+            codeContainer.appendChild(code);
+            
+            const note = document.createElement('div');
+            note.className = 'mt-4 p-4 bg-blue-900 bg-opacity-20 rounded-lg border-l-4 border-blue-500';
+            note.innerHTML = `<p class="text-blue-300"><i class="fas fa-info-circle mr-2"></i><strong>Note:</strong> ${flag.note}</p>`;
+            
+            card.appendChild(header);
+            card.appendChild(codeContainer);
+            card.appendChild(note);
+            
+            return card;
+        }
+
+        // Format JSON for display
+        function formatJson(jsonString) {
+            try {
+                const json = JSON.parse(jsonString);
+                return JSON.stringify(json, null, 2);
+            } catch (e) {
+                return jsonString;
+            }
+        }
+
+        // Copy to clipboard
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(() => {
+                button.classList.add('copied');
+                button.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!';
+                
+                showNotification('Configuration copied to clipboard!');
+                
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    button.innerHTML = '<i class="fas fa-copy mr-2"></i>Copy';
+                }, 2000);
+            });
+        }
+
+        // Show notification
+        function showNotification(message) {
+            notificationText.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredFlags = flags.filter(flag => 
+                    flag.name.toLowerCase().includes(searchTerm) || 
+                    flag.description.toLowerCase().includes(searchTerm) ||
+                    flag.note.toLowerCase().includes(searchTerm) ||
+                    flag.category.toLowerCase().includes(searchTerm)
+                );
+                
+                const activeTab = document.querySelector('.tab.active').dataset.category;
+                if (activeTab !== 'all') {
+                    const categoryFiltered = filteredFlags.filter(flag => flag.category === activeTab);
+                    renderFlags(categoryFiltered);
+                } else {
+                    renderFlags(filteredFlags);
+                }
+            });
+            
+            // Tab functionality
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Filter flags by category
+                    const category = tab.dataset.category;
+                    if (category === 'all') {
+                        renderFlags(flags);
+                    } else {
+                        const filteredFlags = flags.filter(flag => flag.category === category);
+                        renderFlags(filteredFlags);
+                    }
+                });
+            });
+        }
+
+        // Setup FAQ accordion
+        function setupFAQ() {
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    
+                    // Toggle active class
+                    answer.classList.toggle('active');
+                    question.classList.toggle('active');
+                    
+                    // Rotate icon
+                    if (answer.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
