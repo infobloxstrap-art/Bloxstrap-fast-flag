@@ -1,0 +1,68 @@
+<!-- File: /contact.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — BloxStrapFF</title>
+  <meta name="description" content="Contact BloxStrapFF for support, corrections, business inquiries and partnership requests." />
+  <link rel="canonical" href="https://bloxstrapff.netlify.app/contact.html" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <meta property="og:title" content="Contact — BloxStrapFF" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">BF</div>
+      <div>
+        <div class="site-title">BloxStrapFF</div>
+        <div class="small muted">Contact & support</div>
+      </div>
+    </header>
+
+    <main id="contact-main" class="card">
+      <span class="badge">Contact</span>
+      <h1 class="h1">Get in touch</h1>
+      <p class="lead">Questions, corrections, or partnership requests — we want to hear from you. We aim to reply within 2 business days.</p>
+
+      <div class="section">
+        <h2 class="small">Preferred contact methods</h2>
+        <ul class="small muted">
+          <li><strong>Email:</strong> support@bloxstrapff.netlify.app</li>
+          <li><strong>Community:</strong> Follow and DM on X: <a href="https://twitter.com/yourhandle">@yourhandle</a></li>
+          <li><strong>Report an issue:</strong> Use the contact form below and include links/screenshots.</li>
+        </ul>
+      </div>
+
+      <form id="contact-form" class="section" aria-label="Contact form" novalidate>
+        <!-- Honeypot field to reduce bots -->
+        <input type="text" name="hp" class="hidden" autocomplete="off" />
+        <div class="form-row">
+          <label class="small">Name<input class="input" name="name" placeholder="Your full name" required /></label>
+          <label class="small">Email<input class="input" name="email" type="email" placeholder="you@domain.com" required /></label>
+        </div>
+        <div class="form-row">
+          <label class="small">Message<textarea name="message" placeholder="Tell us how we can help..." required></textarea></label>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button class="btn" type="submit">Send message</button>
+          <a class="small muted" href="/privacy.html">Privacy policy</a>
+        </div>
+        <p class="small muted section">Note: This form is client-side only in this template. Connect it to an email endpoint (e.g., Netlify Forms, Formspree, or your API) for production delivery.</p>
+      </form>
+
+      <div class="section">
+        <h2 class="small">Business & legal</h2>
+        <p class="small muted">For partnerships and legal requests, email <strong>legal@bloxstrapff.netlify.app</strong> and include verifiable contact details.</p>
+      </div>
+
+    </main>
+
+    <div class="footer">
+      <a href="/about.html" class="muted">About</a> • <a href="/privacy.html" class="muted">Privacy Policy</a>
+    </div>
+  </div>
+
+  <script src="/assets/main.js"></script>
+</body>
+</html>
