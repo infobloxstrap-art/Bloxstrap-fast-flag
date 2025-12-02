@@ -23,191 +23,136 @@
   <script src="/assets/main.js" defer></script>
 </head>
 <body>
-  <!-- Dynamically Load Header -->
-  <div id="header-placeholder"></div>
+  <!-- Templates for Header and Footer -->
+  <template id="header-template">
+    <header class="header">
+      <div class="logo">BF</div>
+      <div>
+        <div class="site-title">BloxStrapFF</div>
+        <div class="small muted">Fast flags for Roblox games — verified & community-driven</div>
+      </div>
+    </header>
+  </template>
 
-  <main class="container mx-auto px-4 py-8">
-    <section id="stats" class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">103+</div>
-        <div class="stat-label">Optimized Flags</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">6</div>
-        <div class="stat-label">Categories</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">5</div>
-        <div class="stat-label">Texture Packs</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">100%</div>
-        <div class="stat-label">Free to Use</div>
-      </div>
-    </section>
+  <template id="footer-template">
+    <div class="footer">
+      <a href="/about.html" class="muted">About</a> • <a href="/contact.html" class="muted">Contact</a> • <a href="/privacy.html" class="muted">Privacy Policy</a>
+    </div>
+  </template>
 
-    <section id="instructions" class="card p-8 mb-8">
-      <h2 class="text-3xl font-bold mb-6 gradient-text">How to Use Fast Flags with Bloxstrap</h2>
-      <p class="text-gray-300 mb-6">Follow these simple steps to enhance your Roblox experience with Fast Flags:</p>
-      
-      <div class="instruction-step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3 class="text-xl font-semibold mb-2">Launch Bloxstrap</h3>
-          <p class="text-gray-400">Open the Bloxstrap application on your computer.</p>
-        </div>
-      </div>
-      
-      <div class="instruction-step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3 class="text-xl font-semibold mb-2">Access Fast Flags Menu</h3>
-          <p class="text-gray-400">Navigate to <strong>Fast Flags</strong> > <strong>Fast Flags Editor</strong> > <strong>Import JSON</strong>.</p>
-        </div>
-      </div>
-      
-      <div class="instruction-step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <h3 class="text-xl font-semibold mb-2">Copy and Paste</h3>
-          <p class="text-gray-400">Copy the JSON code from any flag below and paste it into the import field.</p>
-        </div>
-      </div>
-      
-      <div class="instruction-step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <h3 class="text-xl font-semibold mb-2">Apply and Save</h3>
-          <p class="text-gray-400">Click save and restart Roblox to apply the changes.</p>
-        </div>
-      </div>
-      
-      <div class="bg-blue-900 bg-opacity-30 border-l-4 border-blue-500 p-4 mt-6 rounded">
-        <p class="text-blue-300"><i class="fas fa-info-circle mr-2"></i><strong>Note:</strong> Bloxstrap Presets have been removed. Please use Bloxstrap directly for the best experience.</p>
-      </div>
-    </section>
-
-    <section id="search" class="search-container">
-      <i class="fas fa-search search-icon"></i>
-      <input type="text" id="searchInput" class="search-input" placeholder="Search for flags by name, description, or category...">
-    </section>
-
-    <section id="categories" class="mb-8">
-      <div class="flex flex-wrap justify-center mb-6">
-        <div class="tab active" data-category="all">All Flags</div>
-        <div class="tab" data-category="rendering">Rendering</div>
-        <div class="tab" data-category="graphical">Graphical</div>
-        <div class="tab" data-category="ui">User Interface</div>
-        <div class="tab" data-category="textures">Textures</div>
-        <div class="tab" data-category="physics">Physics</div>
-        <div class="tab" data-category="other">Other</div>
-      </div>
-    </section>
-
-    <section id="flags" class="mb-12">
-      <div id="flags-container">
-        <!-- Flags will be dynamically loaded here -->
-      </div>
-    </section>
-
-    <section id="faq" class="card p-8 mb-8">
-      <h2 class="text-3xl font-bold mb-6 gradient-text">Frequently Asked Questions</h2>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>What are Fast Flags?</span>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-inner">
-            <p>Fast Flags are configuration settings that allow you to modify various aspects of Roblox's behavior and appearance. They can improve performance, change graphics settings, and enable experimental features.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Is using Fast Flags safe?</span>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-inner">
-            <p>Yes, Fast Flags are generally safe to use as they only modify client-side settings. However, some flags may cause instability or unexpected behavior in certain games. Always backup your settings before making changes.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Can I get banned for using Fast Flags?</span>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-inner">
-            <p>No, using Fast Flags with Bloxstrap is not against Roblox's Terms of Service as they only modify client-side settings and do not provide unfair advantages in gameplay.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>How do I reset my Fast Flags?</span>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-inner">
-            <p>To reset your Fast Flags, open Bloxstrap, go to Fast Flags > Fast Flags Editor, and click "Reset to Defaults". This will restore all settings to their original values.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="resources" class="card p-8">
-      <h2 class="text-3xl font-bold mb-6 gradient-text">Additional Resources</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-        <a href="https://bloxstraps.net/bloxstrap-fast-flags/" target="_blank" class="link-card">
-          <div class="link-icon">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-2">Bloxstrap Fast Flags</h3>
-            <p class="text-gray-400">Complete guide to performance, graphics, and optimization flags</p>
-          </div>
-        </a>
-
-        <a href="https://www.roblox.com/" target="_blank" class="link-card">
-          <div class="link-icon">
-            <i class="fas fa-gamepad"></i>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-2">Official Roblox Website</h3>
-            <p class="text-gray-400">Visit the official Roblox platform and resources</p>
-          </div>
-        </a>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- Dynamically Load Footer -->
-  <div id="footer-placeholder"></div>
+  <!-- The page content -->
+  <div id="content-placeholder"></div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Dynamically load the header
-      fetch('/header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('header-placeholder').innerHTML = data;
-        });
+      // Inject header
+      const headerTemplate = document.getElementById('header-template');
+      const headerClone = headerTemplate.content.cloneNode(true);
+      document.body.prepend(headerClone);
 
-      // Dynamically load the footer
-      fetch('/footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('footer-placeholder').innerHTML = data;
-        });
+      // Inject footer
+      const footerTemplate = document.getElementById('footer-template');
+      const footerClone = footerTemplate.content.cloneNode(true);
+      document.body.appendChild(footerClone);
+
+      // Content section
+      const content = document.getElementById('content-placeholder');
+      content.innerHTML = `
+        <main class="container mx-auto px-4 py-8">
+          <section id="stats" class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">103+</div>
+              <div class="stat-label">Optimized Flags</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">5</div>
+              <div class="stat-label">Texture Packs</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Free to Use</div>
+            </div>
+          </section>
+
+          <section id="instructions" class="card p-8 mb-8">
+            <h2 class="text-3xl font-bold mb-6 gradient-text">How to Use Fast Flags with Bloxstrap</h2>
+            <p class="text-gray-300 mb-6">Follow these simple steps to enhance your Roblox experience with Fast Flags:</p>
+
+            <div class="instruction-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3 class="text-xl font-semibold mb-2">Launch Bloxstrap</h3>
+                <p class="text-gray-400">Open the Bloxstrap application on your computer.</p>
+              </div>
+            </div>
+
+            <div class="instruction-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3 class="text-xl font-semibold mb-2">Access Fast Flags Menu</h3>
+                <p class="text-gray-400">Navigate to <strong>Fast Flags</strong> > <strong>Fast Flags Editor</strong> > <strong>Import JSON</strong>.</p>
+              </div>
+            </div>
+
+            <div class="instruction-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3 class="text-xl font-semibold mb-2">Copy and Paste</h3>
+                <p class="text-gray-400">Copy the JSON code from any flag below and paste it into the import field.</p>
+              </div>
+            </div>
+
+            <div class="instruction-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3 class="text-xl font-semibold mb-2">Apply and Save</h3>
+                <p class="text-gray-400">Click save and restart Roblox to apply the changes.</p>
+              </div>
+            </div>
+
+            <div class="bg-blue-900 bg-opacity-30 border-l-4 border-blue-500 p-4 mt-6 rounded">
+              <p class="text-blue-300"><i class="fas fa-info-circle mr-2"></i><strong>Note:</strong> Bloxstrap Presets have been removed. Please use Bloxstrap directly for the best experience.</p>
+            </div>
+          </section>
+
+          <section id="search" class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search for flags by name, description, or category...">
+          </section>
+
+          <section id="categories" class="mb-8">
+            <div class="flex flex-wrap justify-center mb-6">
+              <div class="tab active" data-category="all">All Flags</div>
+              <div class="tab" data-category="rendering">Rendering</div>
+              <div class="tab" data-category="graphical">Graphical</div>
+              <div class="tab" data-category="ui">User Interface</div>
+              <div class="tab" data-category="textures">Textures</div>
+              <div class="tab" data-category="physics">Physics</div>
+              <div class="tab" data-category="other">Other</div>
+            </div>
+          </section>
+
+          <section id="flags" class="mb-12">
+            <div id="flags-container">
+              <!-- Flags will be dynamically loaded here -->
+            </div>
+          </section>
+
+          <section id="faq" class="card p-8 mb-8">
+            <h2 class="text-3xl font-bold mb-6 gradient-text">Frequently Asked Questions</h2>
+            <!-- FAQ items here -->
+          </section>
+
+          <section id="resources" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 gradient-text">Additional Resources</h2>
+            <!-- Resources section here -->
+          </section>
+        </main>
+      `;
     });
   </script>
 </body>
